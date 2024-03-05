@@ -11,4 +11,11 @@ public class AppConfig {
         helloWorld.setMessage("Hello World!");
         return helloWorld;
     }
+
+    @Bean(name = "cat")
+    @Scope("prototype")
+    public Cat getCat() {
+        double randomDouble = Math.random() * 10;
+        return new Cat("randomWeightCat", randomDouble);
+    }
 }
